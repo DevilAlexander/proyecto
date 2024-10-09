@@ -3,12 +3,7 @@
   <v-container>
     <v-row>
       <v-col>
-        <v-text-field
-          v-model="search"
-          label="Buscar empleado"
-          prepend-icon="mdi-magnify"
-          solo
-        />
+        <v-text-field v-model="search" label="Buscar empleado" prepend-icon="mdi-magnify" solo />
       </v-col>
       <v-col>
         <v-btn color="primary" @click="openAddModal">
@@ -17,12 +12,7 @@
       </v-col>
     </v-row>
 
-    <v-data-table
-      :headers="headers"
-      :items="filteredEmployees"
-      item-value="id"
-      class="elevation-1"
-    >
+    <v-data-table :headers="headers" :items="filteredEmployees" item-value="id" class="elevation-1">
       <!-- eslint-disable-next-line vue/valid-v-slot -->
       <template #item.actions="{ item }">
         <v-btn icon @click="openEditModal(item)">
@@ -33,7 +23,7 @@
         </v-btn>
       </template>
     </v-data-table>
-  
+
     <!-- Modal para agregar empleado -->
     <v-dialog v-model="addDialog" max-width="500px">
       <v-card>
